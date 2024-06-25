@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Операції / Дії";
+    Layout = "/Views/Shared/_LayoutManager.cshtml";
+}
+@model List<Operation>
+<h1>@ViewData["Title"]</h1>
+<ul class="styled-list">
+@foreach (Operation action in Model)
+{
+    <li>
+        @action.Name <span> ; </span> @action.Duration <span>хв ; </span> @action.Price <span>грн ; лікарі : </span>
+        @foreach (Doctor? doc in action?.Doctors)
+        {
+            @doc.Name
+            <span> , </span>
+        }
+        <a href="#">Редагувати</a>
+        <a href="#">Видалити</a>
+    </li>
+}
+</ul>
+<h2 class="asdf">Додати операцію</h2>
+<form method='post' action="/Manager/Operations">
+    <div class="form-group">
+        <label for="select-input">Лікарі:</label>
+            <select name="doctor" id="select-input" class="form-control" multiple>
+                @foreach (Doctor? doc in @ViewBag.Docs)
+                {
+                    <option value="@doc.Name">@doc.Name</option>
+                }
+            </select>
+    </div>
+    <div class="form-group">
+        <label for="text-input"> Назва:</label>
+        <input name="name" type="text" placeholder="назва" style="width:400px" id="text-input" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="text-input">Час, хв:</label>
+        <input name="duration" type="number" placeholder="час, хв" style="width:400px" id="text-input" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="text-input">Ціна, грн:</label>
+        <input name="price" type="number" placeholder="ціна, грн" style="width:400px" id="text-input" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type='submit' value='Додати' class="btn-submit" />
+    </div>
+</form>

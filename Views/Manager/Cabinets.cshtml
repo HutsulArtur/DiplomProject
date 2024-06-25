@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Кабінети";
+    Layout = "/Views/Shared/_LayoutManager.cshtml";
+}
+@model List<Cabinet>
+<h1>@ViewData["Title"]</h1>
+<ul class="styled-list">
+@foreach (Cabinet cab in Model)
+{
+    <li>@cab.Name
+        <a href="#">Редагувати</a>
+        <a href="#">Видалити</a>
+    </li>
+}
+</ul>
+<h2>Додати кабінет</h2>
+<form method='post' action="/Manager/Cabinets">
+    <div class="form-group">
+        <label for="text-input">Кабінет</label>
+        <input type="text" name="name" placeholder="кабінет" id="text-input" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type='submit' value='Записати' class="btn-submit" />
+    </div>
+</form>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Лікарі";
+    Layout = "/Views/Shared/_LayoutManager.cshtml";
+}
+@model List<Doctor>
+<h1>@ViewData["Title"]</h1>
+<ul class="styled-list">
+@foreach (Doctor doc in Model)
+{
+    <li>
+        @doc.Name
+        @doc.Phone
+        @doc.Description
+        <a href="#">Редагувати</a>
+        <a href="#">Видалити</a>
+    </li>
+}
+</ul>
+<h2>Додати лікаря</h2>
+<form method='post'>
+    Введіть дані про лікаря </br>
+    <div class="form-group">
+        <label for="text-input">Ім'я:</label>
+        <input type="text" name="name" style="width:400px" placeholder="ім'я" id="text-input" class="form-control" /> 
+    </div>
+    <div class="form-group">
+        <label for="text-input">Телефон:</label>
+        <input type="text" name="phone" placeholder="телефон" style="width:400px" id="text-input" class="form-control" /> 
+    </div>
+    <div class="form-group">
+        <textarea name="description" placeholder="опис" cols="100" rows="5"> </textarea>
+    </div>
+    <div class="form-group">
+          <input type='submit' value='Додати' class="btn-submit" />
+    </div>
+</form>

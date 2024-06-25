@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Архів зустрічей";
+    Layout = "/Views/Shared/_LayoutManager.cshtml";
+}
+@model List<Appointment>
+<h1>@ViewData["Title"]</h1>
+<ul class="styled-list">
+@foreach (Appointment app in Model)
+{
+    <li>
+        @app?.Date
+        @app?.Time
+        @app?.Patient?.Name
+        @app?.Patient?.Phone
+        @app?.Operation?.Name
+        @app?.Operation?.Price <span> грн </span>
+        @app?.Operation?.Duration <span> хв </span>
+        @app?.Doctor?.Name
+        @app?.Doctor?.Phone
+    </li>
+}
+</ul>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Записатись";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+@model List<Doctor>
+<h1>@ViewData["Title"]</h1>
+<form method='post' action="/Home/WriteDoctor">
+    <div class="form-group">
+        <label for="select-input">Виберіть лікаря:</label>
+        <select name="name" id="select-input" class="form-control">
+            @foreach (Doctor person in Model)
+            {
+                <option value=@person.Name>@person.Name</option>
+            }
+        </select>
+    </div>
+    </br>
+    <div class="form-group">
+        <input type='submit' value='Записатись' class="btn-submit" />
+    </div>
+</form>
+

@@ -1,0 +1,164 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+.form-control {
+    
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 400px
+}
+
+    .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-top: 20px;
+    width: 400px
+}
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+
+.styled-list {
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+    .styled-list li {
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin:10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+        .styled-list li:hover {
+            background-color: #e2e2e2;
+        }
+    .styled-list .li-top {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+
+
+/* Стилі для контейнера форми */
+.styled-form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+    /* Стилі для підписів (label) */
+    .styled-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+/* Стилі для текстових полів */
+.input-field {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Стилі для кнопки */
+.submit-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+    /* Стилі для кнопки при наведенні */
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+
+/* Стилі для контейнера меню */
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa; /* колір фону */
+}
+
+/* Стилі для списку меню */
+.navbar-nav {
+    display: flex;
+    list-style-type: none;
+}
+
+/* Стилі для елементів меню */
+.nav-item {
+    margin-right: 10px;
+}
+
+/* Стилі для посилань в меню */
+.nav-link {
+    text-decoration: none;
+    color: #343a40; /* колір тексту */
+    transition: color 0.3s ease; /* плавний перехід кольору тексту */
+}
+
+    /* Стилі для посилань в меню при наведенні */
+    .nav-link:hover {
+        color: #007bff; /* колір тексту при наведенні */
+        background-color: #a8a9aa; /* колір фону */
+    }

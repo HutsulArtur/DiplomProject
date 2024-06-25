@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Графік прийомів";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+@model List<Doctor>
+<h1>@ViewData["Title"]</h1>
+<p>Наші робочі: Понеділок - П'ятниця з 9 до 18 </p>
+<h2>Лікарі: @Model.Count</h2>
+<ol class="styled-list">
+    @foreach (Doctor person in Model)
+    {
+        <li class = "li-top"s>
+            @person.Name <span> : </span>
+         @person.Phone
+         </li>
+        <ul class="styled-list" >
+        @if (person?.Operations?.Count>0)
+        {
+            @foreach (Operation? action in person.Operations)
+            {
+                <li>
+                @action.Name <span> : </span>
+                @action.Price <span> грн : </span>
+                @action.Duration<span> хв </span></li>
+            }
+        }
+        </ul>
+    }
+</ol>
